@@ -1,12 +1,22 @@
+/*Desktop*/
+#answered-questions{
+  padding: 0px 0px;
+  width: 53%;
+  margin:auto auto 50px auto;
+}
+
+#answered-questions .search-aq{
+  text-align: center;
+}
+
 #myInput {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 12px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
+  background-color:#f6f6f6;
+  width: 60%;
+  height: 40px;
+  font-size: 14px;
+  padding: 12px 20px 12px 20px;
   border: 1px solid #ddd;
-  margin-bottom: 12px;
+  margin: 0px auto 30px auto;
 }
 
 #questions {
@@ -15,62 +25,94 @@
   margin: 0;
 }
 
-div {
-  border: 1px solid #ddd;
-  margin-top: -1px;
-  background-color: #f6f6f6;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  color: #000; 
-  display: block;
+#questions div > li {
+  border: 1px solid #ddd; /* Add a border to all links */
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #fff; /* Grey background color */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove default text underline */
+  font-size: 18px; /* Increase the font-size */
+  color: black; /* Add a black text color */
+  display: block; /* Make it into a block element to fill the whole list */
 }
 
-div a:hover:not(.header) {
-  background-color: #eee;
+#questions p{font-size: 15px;}
+#questions a{color: #2578b5;}
+
+#questions li{
+  margin: 10px 0px !important;
+  font-size: 15px;
 }
 
-#questions li a {
-  border: 1px solid #ddd;
-  margin-top: -1px;
-  background-color: #f6f6f6;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  color: #000;
-  display: block;
-}
-
-li{margin: 10px 0px;}
-
-#questions li a:hover:not(.header) {
-  background-color: #eee;
-}
-
-
-.accordion {
-  background-color: #eee;
-  color: #444;
+/* Style the buttons that are used to open and close the accordion panel */
+#questions .accordion {
+  background-color: transparent;
+  color: #2578b5;
   cursor: pointer;
-  padding: 18px;
+  padding: 5px;
   width: 100%;
-  border: none;
   text-align: left;
   outline: none;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 600;
   transition: 0.4s;
+  text-transform: capitalize;
+  border: none;
+  border-bottom: 1px solid #2578b5;
 }
 
-.active, .accordion:hover {
-  background-color: #1dd0c2;
+#questions .accordion:last-child {
+  border-bottom: 0px;
 }
 
+#questions .accordion:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f063";
+  font-size:16px;
+  right:365px;
+  position: absolute;
+  /*top:0px;*/
+  visibility: initial !important;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+#questions .active, .accordion:hover {
+  background-color: transparent;
+}
+
+#questions .active:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f062";
+  font-size:16px;
+  right:365px;
+  position: absolute;
+  /*top:0px;*/
+  visibility: initial !important;
+}
+
+/* Style the accordion panel. Note: hidden by default */
 .panel {
   padding: 0 18px;
-  background-color: #fff;
+  background-color: transparent;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
 
-/* Coaches Updates */
+
+/* Mobile View */
+@media only screen and (max-width: 768px) 
+and (min-width: 280px) {
+
+#answered-questions{
+  padding: 0px 10px;
+  width: 100%;
+  margin:auto;
+}
+
+#questions .accordion:after {
+  right:15px;
+  position: absolute;
+}
+
+}
